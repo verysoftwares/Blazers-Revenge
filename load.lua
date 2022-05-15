@@ -55,10 +55,10 @@ function physicsload()
     objs.gnd4.shape=love.physics.newRectangleShape(3*36,4*36)
     objs.gnd4.fixture=love.physics.newFixture(objs.gnd4.body,objs.gnd4.shape)
     
-    objs.gnd4_5={}
-    objs.gnd4_5.body=love.physics.newBody(world,12*36+18,16*36)
-    objs.gnd4_5.shape=love.physics.newPolygonShape(0,0,-3.5*36,2*36,0,2*36)
-    objs.gnd4_5.fixture=love.physics.newFixture(objs.gnd4_5.body,objs.gnd4_5.shape)
+    --objs.gnd4_5={}
+    --objs.gnd4_5.body=love.physics.newBody(world,12*36+18,16*36)
+    --objs.gnd4_5.shape=love.physics.newPolygonShape(0,0,-3.5*36,2*36,0,2*36)
+    --objs.gnd4_5.fixture=love.physics.newFixture(objs.gnd4_5.body,objs.gnd4_5.shape)
 
     objs.gnd5={}
     objs.gnd5.body=love.physics.newBody(world,12*36-2*36+18,22*36)
@@ -114,8 +114,16 @@ function physicsload()
         local a1=-(i-1)/5*pi/2-pi
         local a2=-i/5*pi/2-pi
         objs['curve3_'..i].body=love.physics.newBody(world,0,0)
-        objs['curve3_'..i].shape=love.physics.newPolygonShape(0*36,16*36+2*36,3.5*36+cos(a1)*3.5*36,16*36-5*36+sin(a1)*7*36,3.5*36+cos(a2)*3.5*36,16*36-5*36+sin(a2)*7*36)
+        objs['curve3_'..i].shape=love.physics.newPolygonShape(0*36,16*36+2*36,3.5*36+cos(a1)*3.5*36,16*36-7*36+sin(a1)*7*36,3.5*36+cos(a2)*3.5*36,16*36-5*36+sin(a2)*7*36)
         objs['curve3_'..i].fixture=love.physics.newFixture(objs['curve3_'..i].body,objs['curve3_'..i].shape)
+    end
+    for i=1,5 do
+        objs['curve4_'..i]={}
+        local a1=-(i-1)/5*pi/2-3*pi/2
+        local a2=-i/5*pi/2-3*pi/2
+        objs['curve4_'..i].body=love.physics.newBody(world,0,0)
+        objs['curve4_'..i].shape=love.physics.newPolygonShape(12*36+18,16*36+2*36,5*36+18+3.5*36+cos(a1)*3.5*36,16*36-5*36+sin(a1)*7*36,5*36+18+3.5*36+cos(a2)*3.5*36,16*36-7*36+sin(a2)*7*36)
+        objs['curve4_'..i].fixture=love.physics.newFixture(objs['curve4_'..i].body,objs['curve4_'..i].shape)
     end
 
     for i=1,3 do
