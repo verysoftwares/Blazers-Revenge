@@ -80,6 +80,15 @@ function physicsload()
     objs.fence2.shape=love.physics.newRectangleShape(18,10*36)
     objs.fence2.fixture=love.physics.newFixture(objs.fence2.body,objs.fence2.shape)
 
+    objs.fence3={}
+    objs.fence3.body=love.physics.newBody(world,11*36-9,7*36)
+    objs.fence3.shape=love.physics.newRectangleShape(18,6*36)
+    objs.fence3.fixture=love.physics.newFixture(objs.fence3.body,objs.fence3.shape)
+
+    objs.backfence={}
+    objs.backfence.body=love.physics.newBody(world,1*36,2*36)
+    objs.backfence.shape=love.physics.newRectangleShape(2*36,4*36)
+    objs.backfence.fixture=love.physics.newFixture(objs.backfence.body,objs.backfence.shape)
     --objs.curve={}
 
     -- "This shape can have 8 vertices at most, 
@@ -114,7 +123,7 @@ function physicsload()
         local a1=-(i-1)/5*pi/2-pi
         local a2=-i/5*pi/2-pi
         objs['curve3_'..i].body=love.physics.newBody(world,0,0)
-        objs['curve3_'..i].shape=love.physics.newPolygonShape(0*36,16*36+2*36,3.5*36+cos(a1)*3.5*36,16*36-7*36+sin(a1)*7*36,3.5*36+cos(a2)*3.5*36,16*36-5*36+sin(a2)*7*36)
+        objs['curve3_'..i].shape=love.physics.newPolygonShape(0*36,16*36+2*36,3.5*36+cos(a1)*3.5*36,16*36-5*36+sin(a1)*7*36,3.5*36+cos(a2)*3.5*36,16*36-5*36+sin(a2)*7*36)
         objs['curve3_'..i].fixture=love.physics.newFixture(objs['curve3_'..i].body,objs['curve3_'..i].shape)
     end
     for i=1,5 do
@@ -122,14 +131,14 @@ function physicsload()
         local a1=-(i-1)/5*pi/2-3*pi/2
         local a2=-i/5*pi/2-3*pi/2
         objs['curve4_'..i].body=love.physics.newBody(world,0,0)
-        objs['curve4_'..i].shape=love.physics.newPolygonShape(12*36+18,16*36+2*36,5*36+18+3.5*36+cos(a1)*3.5*36,16*36-5*36+sin(a1)*7*36,5*36+18+3.5*36+cos(a2)*3.5*36,16*36-7*36+sin(a2)*7*36)
+        objs['curve4_'..i].shape=love.physics.newPolygonShape(12*36+18,16*36+2*36,5*36+18+3.5*36+cos(a1)*3.5*36,16*36-5*36+sin(a1)*7*36,5*36+18+3.5*36+cos(a2)*3.5*36,16*36-5*36+sin(a2)*7*36)
         objs['curve4_'..i].fixture=love.physics.newFixture(objs['curve4_'..i].body,objs['curve4_'..i].shape)
     end
 
     for i=1,3 do
     local a=-(i-1)/3*pi*2-pi/6
     objs['bumper'..i]={}
-    objs['bumper'..i].body=love.physics.newBody(world,10*36-2*36+cos(a)*2.5*36,5*36+sin(a)*2.5*36)
+    objs['bumper'..i].body=love.physics.newBody(world,10*36-2*36-36+cos(a)*2.5*36,5*36+sin(a)*2.5*36)
     objs['bumper'..i].shape=love.physics.newCircleShape(36+9)
     objs['bumper'..i].fixture=love.physics.newFixture(objs['bumper'..i].body,objs['bumper'..i].shape,0.4)
     end
