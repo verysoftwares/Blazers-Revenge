@@ -7,7 +7,7 @@ function draw()
     love.graphics.circle('fill',objs.ball.body:getX(),objs.ball.body:getY(),objs.ball.shape:getRadius())
     --love.graphics.polygon('fill',objs.gnd.body:getWorldPoints(objs.gnd.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2.body:getWorldPoints(objs.gnd2.shape:getPoints()))
-    love.graphics.polygon('fill',objs.gnd1_5.body:getWorldPoints(objs.gnd1_5.shape:getPoints()))
+    --love.graphics.polygon('fill',objs.gnd1_5.body:getWorldPoints(objs.gnd1_5.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd3.body:getWorldPoints(objs.gnd3.shape:getPoints()))
     --love.graphics.polygon('fill',objs.gnd4.body:getWorldPoints(objs.gnd4.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd5.body:getWorldPoints(objs.gnd5.shape:getPoints()))
@@ -18,6 +18,8 @@ function draw()
     love.graphics.polygon('fill',objs.fence2.body:getWorldPoints(objs.fence2.shape:getPoints()))
     for i=1,5 do
     love.graphics.polygon('fill',objs['curve'..i].body:getWorldPoints(objs['curve'..i].shape:getPoints()))    
+    love.graphics.polygon('fill',objs['curve2_'..i].body:getWorldPoints(objs['curve2_'..i].shape:getPoints()))    
+    love.graphics.polygon('fill',objs['curve3_'..i].body:getWorldPoints(objs['curve3_'..i].shape:getPoints()))    
     end
 
     love.graphics.polygon('fill',objs.plunger.body:getWorldPoints(objs.plunger.shape:getPoints()))    
@@ -38,7 +40,7 @@ function draw()
     love.graphics.polygon('fill',objs.rpaddle.body:getWorldPoints(objs.rpaddle.shape:getPoints()))
     --local pt1x,pt1y,pt2x,pt2y=objs.border.body:getWorldPoints(objs.border.shape:getPoints())
     --love.graphics.rectangle('line',pt1x,pt1y,pt2x-pt1x,pt2y-pt1y)
-    lg.print('hello world!')
+    --lg.print('hello world!')
 end
 
 love.draw= draw

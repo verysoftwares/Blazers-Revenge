@@ -8,10 +8,10 @@ function update(hw_dt)
     if tapped('lshift') then
         --local _,_,_,_,x1,y1=objs.lpaddle.body:getWorldPoints(objs.lpaddle.shape:getPoints())
         --print(x1,y1)
-        objs.lpaddle.body:applyLinearImpulse(0,-160*10)
+        objs.lpaddle.body:applyLinearImpulse(0,-350*10)
     end
     if tapped('rshift') then
-        objs.rpaddle.body:applyLinearImpulse(0,-160*10)
+        objs.rpaddle.body:applyLinearImpulse(0,-350*10)
     end
 
     if state=='plunger' then
