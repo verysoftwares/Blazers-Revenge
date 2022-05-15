@@ -13,8 +13,28 @@ function draw()
     love.graphics.polygon('fill',objs.gnd5.body:getWorldPoints(objs.gnd5.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd4_5.body:getWorldPoints(objs.gnd4_5.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd6.body:getWorldPoints(objs.gnd6.shape:getPoints()))
-    
+
+    love.graphics.polygon('fill',objs.fence.body:getWorldPoints(objs.fence.shape:getPoints()))
+    love.graphics.polygon('fill',objs.fence2.body:getWorldPoints(objs.fence2.shape:getPoints()))
+    for i=1,5 do
+    love.graphics.polygon('fill',objs['curve'..i].body:getWorldPoints(objs['curve'..i].shape:getPoints()))    
+    end
+
+    love.graphics.polygon('fill',objs.plunger.body:getWorldPoints(objs.plunger.shape:getPoints()))    
+    fg(0.6,0.6,0.65)
+    rect('fill',14*36-36+4,22*36-2*36+18+9,36-8,36) 
+    fg(0.6,0.2,0.2)
+    rect('fill',14*36-36+4,22*36-2*36+18+9+plunger.draw,36-8,4)   
+    fg(1,1,1,1)
+
+    for i=1,3 do
+        love.graphics.circle('fill',objs['bumper'..i].body:getX(),objs['bumper'..i].body:getY(),objs['bumper'..i].shape:getRadius())
+    end
+
     love.graphics.polygon('fill',objs.lpaddle.body:getWorldPoints(objs.lpaddle.shape:getPoints()))
+    --fg(0.6,0.2,0.6)
+    --love.graphics.polygon('fill',objs.lpaddlemax.body:getWorldPoints(objs.lpaddlemax.shape:getPoints()))
+    --fg(1,1,1)
     love.graphics.polygon('fill',objs.rpaddle.body:getWorldPoints(objs.rpaddle.shape:getPoints()))
     --local pt1x,pt1y,pt2x,pt2y=objs.border.body:getWorldPoints(objs.border.shape:getPoints())
     --love.graphics.rectangle('line',pt1x,pt1y,pt2x-pt1x,pt2y-pt1y)

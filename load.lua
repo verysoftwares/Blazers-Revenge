@@ -12,7 +12,7 @@ function physicsload()
     world=love.physics.newWorld(0,9.81*5*36,true)
     
     objs.ball={}
-    objs.ball.body=love.physics.newBody(world,4*36,12*36,'dynamic')
+    objs.ball.body=love.physics.newBody(world,14*36-18,22*36-2*36,'dynamic')
     objs.ball.shape=love.physics.newCircleShape(14)
     objs.ball.fixture=love.physics.newFixture(objs.ball.body,objs.ball.shape,0.4)
     objs.ball.fixture:setRestitution(0.8)
@@ -22,7 +22,7 @@ function physicsload()
     --objs.border.shape=love.physics.newEdgeShape(0,0,12*36,22*36)
     --objs.border.fixture=love.physics.newFixture(objs.border.body,objs.border.shape)
 
-    for i,v in ipairs({{6*36,-18,12*36,1*36},{12*36+18,11*36,1*36,22*36},{6*36,22*36+18,12*36,1*36},{-18,11*36,1*36,22*36}}) do
+    for i,v in ipairs({{7*36,-18,14*36,1*36},{14*36+18,11*36,1*36,22*36},{7*36,22*36+18,14*36,1*36},{-18,11*36,1*36,22*36}}) do
         objs['wall'..i]={}
         objs['wall'..i].body=love.physics.newBody(world,v[1],v[2])
         objs['wall'..i].shape=love.physics.newRectangleShape(v[3],v[4])
@@ -70,10 +70,62 @@ function physicsload()
     objs.gnd6.shape=love.physics.newRectangleShape(3*36,4*36)
     objs.gnd6.fixture=love.physics.newFixture(objs.gnd6.body,objs.gnd6.shape)
 
+    objs.fence={}
+    objs.fence.body=love.physics.newBody(world,14*36-1.5*36+9,13*36)
+    objs.fence.shape=love.physics.newRectangleShape(18,18*36)
+    objs.fence.fixture=love.physics.newFixture(objs.fence.body,objs.fence.shape)
+
+    objs.fence2={}
+    objs.fence2.body=love.physics.newBody(world,1.5*36+9,6*36)
+    objs.fence2.shape=love.physics.newRectangleShape(18,12*36)
+    objs.fence2.fixture=love.physics.newFixture(objs.fence2.body,objs.fence2.shape)
+
+    --objs.curve={}
+
+    -- "This shape can have 8 vertices at most, 
+    -- and must form a convex shape."
+    --local curve={14*36-5*36,0,14*36,0,14*36,5*36}
+    --for i=1,20 do
+    --    local a=-i/20*pi/2
+    --    ins(curve,14*36-5*36-cos(a)*5*36)
+    --    ins(curve,5*36-sin(a)*5*36)
+    --end
+    --objs.curve.body=love.physics.newBody(world,0,0)
+    --objs.curve.shape=love.physics.newPolygonShape(unpack(curve))
+    --objs.curve.fixture=love.physics.newFixture(objs.curve.body,objs.curve.shape)
+    for i=1,5 do
+        objs['curve'..i]={}
+        local a1=-(i-1)/5*pi/2
+        local a2=-i/5*pi/2
+        objs['curve'..i].body=love.physics.newBody(world,0,0)
+        objs['curve'..i].shape=love.physics.newPolygonShape(14*36,0,14*36-5*36+cos(a1)*5*36,5*36+sin(a1)*5*36,14*36-5*36+cos(a2)*5*36,5*36+sin(a2)*5*36)
+        objs['curve'..i].fixture=love.physics.newFixture(objs['curve'..i].body,objs['curve'..i].shape)
+    end
+
+    for i=1,3 do
+    local a=-(i-1)/3*pi*2-pi/6
+    objs['bumper'..i]={}
+    objs['bumper'..i].body=love.physics.newBody(world,10*36-2*36+cos(a)*2.5*36,5*36+sin(a)*2.5*36)
+    objs['bumper'..i].shape=love.physics.newCircleShape(36+9)
+    objs['bumper'..i].fixture=love.physics.newFixture(objs['bumper'..i].body,objs['bumper'..i].shape,0.4)
+    end
+
+    objs.plunger={}
+    objs.plunger.body=love.physics.newBody(world,14*36-18,22*36-18-9)
+    objs.plunger.shape=love.physics.newRectangleShape(36,36+18)
+    objs.plunger.fixture=love.physics.newFixture(objs.plunger.body,objs.plunger.shape)
+
     objs.lpaddle={}
     objs.lpaddle.body=love.physics.newBody(world,0,0,'dynamic')
     objs.lpaddle.shape=love.physics.newPolygonShape(3*36,19*36,3*36+14,19*36-14,6*36,19*36,3*36+14,19*36+14)
     objs.lpaddle.fixture=love.physics.newFixture(objs.lpaddle.body,objs.lpaddle.shape)
+
+    --objs.lpaddlemax={}
+    --objs.lpaddlemax.body=love.physics.newBody(world,0,0,'kinematic')
+    --objs.lpaddlemax.shape=love.physics.newPolygonShape(3*36,19*36,6*36,19*36,6*36,20*36)
+    --objs.lpaddlemax.fixture=love.physics.newFixture(objs.lpaddlemax.body,objs.lpaddlemax.shape,0)
+
+    --love.physics.newRevoluteJoint(objs.lpaddlemax.body,objs.gnd.body,3*36,19*36,false)
 
     objs.rpaddle={}
     objs.rpaddle.body=love.physics.newBody(world,0,0,'dynamic')
