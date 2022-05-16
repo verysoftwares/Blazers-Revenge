@@ -1,6 +1,7 @@
 -- file linking.
     require 'load'
     require 'alias'
+    require 'physics'
     require 'utility'
     require 'update'
     require 'draw'

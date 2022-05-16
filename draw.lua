@@ -32,9 +32,11 @@ function draw()
     rect('fill',14*36-36+4,22*36-2*36+18+9+plunger.draw,36-8,4)   
     fg(1,1,1,1)
 
+    fg(0.6,0.2,0.2)
     for i=1,3 do
         love.graphics.circle('fill',objs['bumper'..i].body:getX(),objs['bumper'..i].body:getY(),objs['bumper'..i].shape:getRadius())
     end
+    fg(1,1,1,1)
 
     love.graphics.polygon('fill',objs.lpaddle.body:getWorldPoints(objs.lpaddle.shape:getPoints()))
     --fg(0.6,0.2,0.6)
