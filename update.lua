@@ -1,4 +1,7 @@
 plunger={ready=false,draw=0}
+upgrades={
+    ['gate1']=15,
+}
 
 function update(hw_dt)
     world:update(1/60)

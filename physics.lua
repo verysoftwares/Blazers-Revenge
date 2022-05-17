@@ -2,6 +2,7 @@ function beginContact(a,b,coll)
     if (a:getUserData()=='ball' and b:getUserData()=='bumper') or (a:getUserData()=='bumper' and b:getUserData()=='ball') then
         local nx,ny=coll:getNormal()
         objs.ball.body:applyLinearImpulse(nx*250,ny*250)
+        if upgrades.gate1>0 then upgrades.gate1=upgrades.gate1-1 end
     end
 end
 

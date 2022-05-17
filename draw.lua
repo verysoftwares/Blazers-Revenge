@@ -4,6 +4,18 @@
 function draw()
     bg(0.6,0.6,0.65)
     --lg.rotate(pi/6)
+
+    if upgrades.gate1>0 then
+        fg(1,1,0.8)
+        lg.circle('fill',18+9,36*5,18+6)
+        fg(0.6,0.6,0.65)
+        lg.print(upgrades.gate1,18+9-mainfont:getWidth(upgrades.gate1)/2,36*5-9-2)
+    else
+        fg(0.15,0.15,0.15)
+        lg.circle('fill',18+9,36*5,18+6)
+    end
+
+    fg(1,1,1)
     love.graphics.circle('fill',objs.ball.body:getX(),objs.ball.body:getY(),objs.ball.shape:getRadius())
     --love.graphics.polygon('fill',objs.gnd.body:getWorldPoints(objs.gnd.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2.body:getWorldPoints(objs.gnd2.shape:getPoints()))
@@ -36,8 +48,8 @@ function draw()
     for i=1,3 do
         love.graphics.circle('fill',objs['bumper'..i].body:getX(),objs['bumper'..i].body:getY(),objs['bumper'..i].shape:getRadius())
     end
+    
     fg(1,1,1,1)
-
     love.graphics.polygon('fill',objs.lpaddle.body:getWorldPoints(objs.lpaddle.shape:getPoints()))
     --fg(0.6,0.2,0.6)
     --love.graphics.polygon('fill',objs.lpaddlemax.body:getWorldPoints(objs.lpaddlemax.shape:getPoints()))
