@@ -4,7 +4,9 @@ upgrades={
 }
 
 function update(hw_dt)
-    world:update(1/60)
+    for i=1,3 do
+    world:update(1/180)
+    end
 
     if (press('lctrl') or press('rctrl')) and tapped('return') then love.event.quit('restart') end
 
