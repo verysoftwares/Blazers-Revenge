@@ -5,6 +5,7 @@ function draw()
     bg(0.6,0.6,0.65)
     --lg.rotate(pi/6)
 
+    if world==world1 then
     if upgrades.gate1>0 then
         fg(1,1,0.8)
         lg.circle('fill',18+9,36*5,18+6)
@@ -60,6 +61,9 @@ function draw()
     fg(0.6,0.6,0.65)
     lg.print('hello\nworld!')
     fg(1,1,1)
+    end
+    if world==world2 then
+    end
 end
 
 love.draw= draw
