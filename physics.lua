@@ -9,9 +9,12 @@ end
 function physicsload()
     objs={}
     love.physics.setMeter(36)
-    world=love.physics.newWorld(0,9.81*5*36,true)
-    world:setCallbacks(beginContact, function() end, function() end, function() end)
-    
+    world1=love.physics.newWorld(0,9.81*5*36,true)
+    world1:setCallbacks(beginContact, function() end, function() end, function() end)
+    world=world1
+
+    world2=love.physics.newWorld(0,9.81*5*36,true)
+
     objs.ball={}
     objs.ball.body=love.physics.newBody(world,14*36-18,22*36-2*36,'dynamic')
     objs.ball.shape=love.physics.newCircleShape(14)
