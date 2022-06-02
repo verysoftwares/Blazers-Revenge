@@ -63,6 +63,9 @@ function draw()
     fg(1,1,1)
     end
     if world==world2 then
+    fg(1,1,1)
+    love.graphics.polygon('fill',objs.lpaddle2.body:getWorldPoints(objs.lpaddle2.shape:getPoints()))        
+    love.graphics.polygon('fill',objs.rpaddle2.body:getWorldPoints(objs.rpaddle2.shape:getPoints()))        
     end
 end
 
