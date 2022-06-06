@@ -24,6 +24,7 @@ function update(hw_dt)
         objs.rpaddle.body:applyLinearImpulse(0,-350*10)
         elseif world==world2 then
         objs.rpaddle2.body:applyLinearImpulse(0,-350*10)
+        objs.rpaddle3.body:applyLinearImpulse(0,-350*10)
         end 
     end
 
