@@ -171,6 +171,11 @@ function physicsload()
     objs.gnd2_4.shape=love.physics.newPolygonShape(14*36-(1*36+18),22*36-4*36,14*36-(1*36+18),22*36-6*36+18,14*36-(2*36+18),22*36-6*36,14*36-(2*36+18),22*36-4*36+18)
     objs.gnd2_4.fixture=love.physics.newFixture(objs.gnd2_4.body,objs.gnd2_4.shape)
 
+    objs.gnd2_5={}
+    objs.gnd2_5.body=love.physics.newBody(world2,0,2*36)
+    objs.gnd2_5.shape=love.physics.newPolygonShape(14*36-18,6*36,14*36-18,6*36-36,14*36,6*36-36-18,14*36,6*36-18)
+    objs.gnd2_5.fixture=love.physics.newFixture(objs.gnd2_5.body,objs.gnd2_5.shape)
+
     objs.bumper2_1={}
     objs.bumper2_1.body=love.physics.newBody(world2,10*36,3*36)
     objs.bumper2_1.shape=love.physics.newCircleShape(36+9)
@@ -222,7 +227,7 @@ function physicsload()
     objs.rpaddle2.fixture=love.physics.newFixture(objs.rpaddle2.body,objs.rpaddle2.shape)
 
     objs.rpaddle3={}
-    objs.rpaddle3.body=love.physics.newBody(world2,18+18+2*36,-6*36+18,'dynamic')
+    objs.rpaddle3.body=love.physics.newBody(world2,18+18+2*36+36,-6*36+18+18+18,'dynamic')
     objs.rpaddle3.shape=love.physics.newPolygonShape(12*36-3*36+18,12*36,12*36-(3*36+14)+18,12*36-14,12*36-(6*36-14)+18,12*36-14,12*36-6*36+18,12*36,12*36-(6*36-14)+18,12*36+14,12*36-(3*36+14)+18,12*36+14)
     objs.rpaddle3.fixture=love.physics.newFixture(objs.rpaddle3.body,objs.rpaddle3.shape)
 
@@ -231,4 +236,5 @@ function physicsload()
 
     love.physics.newRevoluteJoint(objs.lpaddle2.body,objs.gnd2_2.body,3*36+18,19*36+18,true)
     love.physics.newRevoluteJoint(objs.rpaddle2.body,objs.gnd2_1.body,12*36-3*36+18+18+18,19*36+18,true)
+    love.physics.newRevoluteJoint(objs.rpaddle3.body,objs.gnd2_5.body,18+18+2*36+36+12*36-3*36+18,-6*36+18+18+18+12*36,true)
 end

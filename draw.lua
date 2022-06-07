@@ -68,6 +68,7 @@ function draw()
     love.graphics.polygon('fill',objs.gnd2_2.body:getWorldPoints(objs.gnd2_2.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_3.body:getWorldPoints(objs.gnd2_3.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_4.body:getWorldPoints(objs.gnd2_4.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_5.body:getWorldPoints(objs.gnd2_5.shape:getPoints()))
 
     fg(0.6,0.2,0.2)
     for i=1,3 do
