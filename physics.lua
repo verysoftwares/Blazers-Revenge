@@ -55,7 +55,7 @@ function physicsload()
 
     objs.gnd2={}
     objs.gnd2.body=love.physics.newBody(world1,2*36,22*36)
-    objs.gnd2.shape=love.physics.newRectangleShape(4*36,4*36)
+    objs.gnd2.shape=love.physics.newRectangleShape(3*36+18,4*36)
     objs.gnd2.fixture=love.physics.newFixture(objs.gnd2.body,objs.gnd2.shape)
     
     objs.gnd3={}
@@ -76,7 +76,7 @@ function physicsload()
 
     objs.gnd5={}
     objs.gnd5.body=love.physics.newBody(world1,12*36-2*36+18,22*36)
-    objs.gnd5.shape=love.physics.newRectangleShape(4*36,4*36)
+    objs.gnd5.shape=love.physics.newRectangleShape(3*36+18,4*36)
     objs.gnd5.fixture=love.physics.newFixture(objs.gnd5.body,objs.gnd5.shape)
     
     objs.gnd6={}
