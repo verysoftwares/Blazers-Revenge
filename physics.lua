@@ -156,10 +156,30 @@ function physicsload()
     objs.gnd2_1.shape=love.physics.newPolygonShape(14*36-3*36-18,22*36-2*36,14*36-3*36-18,22*36-2*36-36,14*36-1*36-18,22*36-4*36,14*36-1*36-18,22*36-2*36-36)
     objs.gnd2_1.fixture=love.physics.newFixture(objs.gnd2_1.body,objs.gnd2_1.shape)
 
+    objs.gnd2_1a={}
+    objs.gnd2_1a.body=love.physics.newBody(world2,0,0)
+    objs.gnd2_1a.shape=love.physics.newPolygonShape(14*36-3*36-18,22*36-2*36,14*36-3*36-18-7,22*36-2*36,14*36-3*36-18,22*36-2*36-18)
+    objs.gnd2_1a.fixture=love.physics.newFixture(objs.gnd2_1a.body,objs.gnd2_1a.shape)
+
+    objs.gnd2_1b={}
+    objs.gnd2_1b.body=love.physics.newBody(world2,0,0)
+    objs.gnd2_1b.shape=love.physics.newPolygonShape(14*36-3*36-18,22*36-3*36,14*36-3*36-18-7,22*36-3*36,14*36-3*36-18,22*36-3*36+18)
+    objs.gnd2_1b.fixture=love.physics.newFixture(objs.gnd2_1b.body,objs.gnd2_1b.shape)
+
     objs.gnd2_2={}
     objs.gnd2_2.body=love.physics.newBody(world2,0,0)
     objs.gnd2_2.shape=love.physics.newPolygonShape(3*36+18,22*36-2*36,3*36+18,22*36-2*36-36,1*36+18,22*36-4*36,1*36+18,22*36-2*36-36)
     objs.gnd2_2.fixture=love.physics.newFixture(objs.gnd2_2.body,objs.gnd2_2.shape)
+
+    objs.gnd2_2a={}
+    objs.gnd2_2a.body=love.physics.newBody(world2,0,0)
+    objs.gnd2_2a.shape=love.physics.newPolygonShape(3*36+18,22*36-2*36,3*36+18+7,22*36-2*36,3*36+18,22*36-2*36-18)
+    objs.gnd2_2a.fixture=love.physics.newFixture(objs.gnd2_2a.body,objs.gnd2_2a.shape)
+
+    objs.gnd2_2b={}
+    objs.gnd2_2b.body=love.physics.newBody(world2,0,0)
+    objs.gnd2_2b.shape=love.physics.newPolygonShape(3*36+18,22*36-3*36,3*36+18+7,22*36-3*36,3*36+18,22*36-3*36+18)
+    objs.gnd2_2b.fixture=love.physics.newFixture(objs.gnd2_2b.body,objs.gnd2_2b.shape)
 
     objs.gnd2_3={}
     objs.gnd2_3.body=love.physics.newBody(world2,0,0)
@@ -175,6 +195,16 @@ function physicsload()
     objs.gnd2_5.body=love.physics.newBody(world2,0,2*36)
     objs.gnd2_5.shape=love.physics.newPolygonShape(14*36-18,6*36,14*36-18,6*36-36,14*36,6*36-36-18,14*36,6*36-18)
     objs.gnd2_5.fixture=love.physics.newFixture(objs.gnd2_5.body,objs.gnd2_5.shape)
+
+    objs.gnd2_5a={}
+    objs.gnd2_5a.body=love.physics.newBody(world2,0,2*36)
+    objs.gnd2_5a.shape=love.physics.newPolygonShape(14*36-18,6*36,14*36-18-7,6*36,14*36-18,6*36-18)
+    objs.gnd2_5a.fixture=love.physics.newFixture(objs.gnd2_5a.body,objs.gnd2_5a.shape)
+
+    objs.gnd2_5b={}
+    objs.gnd2_5b.body=love.physics.newBody(world2,0,2*36)
+    objs.gnd2_5b.shape=love.physics.newPolygonShape(14*36-18,6*36-36,14*36-18-7,6*36-36,14*36-18,6*36-36+18)
+    objs.gnd2_5b.fixture=love.physics.newFixture(objs.gnd2_5b.body,objs.gnd2_5b.shape)
 
     objs.bumper2_1={}
     objs.bumper2_1.body=love.physics.newBody(world2,10*36,3*36)

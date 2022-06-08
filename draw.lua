@@ -65,10 +65,16 @@ function draw()
     if world==world2 then
     fg(1,1,1)
     love.graphics.polygon('fill',objs.gnd2_1.body:getWorldPoints(objs.gnd2_1.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_1a.body:getWorldPoints(objs.gnd2_1a.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_1b.body:getWorldPoints(objs.gnd2_1b.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_2.body:getWorldPoints(objs.gnd2_2.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_2a.body:getWorldPoints(objs.gnd2_2a.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_2b.body:getWorldPoints(objs.gnd2_2b.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_3.body:getWorldPoints(objs.gnd2_3.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_4.body:getWorldPoints(objs.gnd2_4.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_5.body:getWorldPoints(objs.gnd2_5.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_5a.body:getWorldPoints(objs.gnd2_5a.shape:getPoints()))
+    love.graphics.polygon('fill',objs.gnd2_5b.body:getWorldPoints(objs.gnd2_5b.shape:getPoints()))
 
     fg(0.6,0.2,0.2)
     for i=1,3 do
