@@ -43,9 +43,17 @@ function update(hw_dt)
         if objs.ball.body:getX()<12*36 then plunger.ready=false; plunger.draw=0; state=nil end
     end
 
+    if world==world1 then
     local bx,by=objs.ball.body:getX(),objs.ball.body:getY()
     if upgrades.gate1==0 and math.sqrt((bx-18+9)^2+(by-36*5)^2)<=18+6+objs.ball.shape:getRadius() then
         world=world2
+        objs.ball2.body:setPosition(14*36-36,1*36)
+    end
+    elseif world==world2 then
+    --local bx,by=objs.ball2.body:getX(),objs.ball2.body:getY()
+    --if math.sqrt((bx-18+9)^2+(by-36*5)^2)<=18+6+objs.ball.shape:getRadius() then
+    --    world=world2
+    --end
     end
 
     t = t+1

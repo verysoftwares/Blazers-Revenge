@@ -76,6 +76,8 @@ function draw()
     love.graphics.polygon('fill',objs.gnd2_5a.body:getWorldPoints(objs.gnd2_5a.shape:getPoints()))
     love.graphics.polygon('fill',objs.gnd2_5b.body:getWorldPoints(objs.gnd2_5b.shape:getPoints()))
 
+    love.graphics.circle('fill',objs.ball2.body:getX(),objs.ball2.body:getY(),objs.ball2.shape:getRadius())
+
     fg(0.6,0.2,0.2)
     for i=1,3 do
         love.graphics.circle('fill',objs['bumper2_'..i].body:getX(),objs['bumper2_'..i].body:getY(),objs['bumper2_'..i].shape:getRadius())

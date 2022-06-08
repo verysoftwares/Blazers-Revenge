@@ -15,7 +15,7 @@ function physicsload()
 
     world2=love.physics.newWorld(0,9.81*5*36,true)
     world2:setCallbacks(beginContact, function() end, function() end, function() end)
-    world=world2
+    --world=world2
 
     objs.ball={}
     objs.ball.body=love.physics.newBody(world1,14*36-18,22*36-2*36,'dynamic')
@@ -23,6 +23,13 @@ function physicsload()
     objs.ball.fixture=love.physics.newFixture(objs.ball.body,objs.ball.shape,0.4)
     objs.ball.fixture:setRestitution(0.4)
     objs.ball.fixture:setUserData('ball')
+
+    objs.ball2={}
+    objs.ball2.body=love.physics.newBody(world2,14*36-18,22*36-2*36,'dynamic')
+    objs.ball2.shape=love.physics.newCircleShape(14)
+    objs.ball2.fixture=love.physics.newFixture(objs.ball2.body,objs.ball2.shape,0.4)
+    objs.ball2.fixture:setRestitution(0.4)
+    objs.ball2.fixture:setUserData('ball')
 
     --objs.border={}
     --objs.border.body=love.physics.newBody(world1,-6*36,-11*36)
